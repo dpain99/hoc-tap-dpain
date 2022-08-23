@@ -1,0 +1,48 @@
+
+
+1. Khởi tạo project Nodejs
+
+ B1: Tạo folder rỗng để chứa project
+ B2: Terminal gõ lệnh: npm init -y
+ B3: Thêm các cấu hình:  	"dependencies": {},
+  				"devDependencies": {},
+  				"peerDependencies": {},
+
+ 2. Cài đặt Es6 + Eslint + Typescript
+ * Es6
+ Es6(ECMAScript 6) : các kỹ thuật nâng cao của js và là 1 chuẩn mực để làm theo.
+ Điều kiện: Browser phiên bản 2015 trở lên.
+ Cài extension trên vsc: JavaScript(ES6) code snippets
+ 
+ *Eslint + Prettier
+ B1: tải extension: Prettier và Eslint trên Vsc
+ Prettier:
+ B1: Terminal gõ lệnh: npm install --save-dev --save-exact prettier
+ B2: Cài format on save (khi save file tự động format)
+ B3: Set các rule riêng: tạo conf file .prettierrc.json, rồi thêm các rule vào file đó
+
+ Eslint:
+ B1: Terminal lệnh: npm init @eslint/config
+ B2: setting
+ B3: setup cho eslint và prettier: npm install --save-dev eslint-config-prettier
+ B4: ở Eslint.json, phần Extend: thêm vào "prettier"
+
+ *Typescript
+ B1: terminal: npm install -g typescript
+ B2: chạy project ts:
+     (npm install -g ts-node)
+     lệnh: ts-node.cmd + tên project
+           ex: tcs-node.cmd script.ts
+ Nếu có lỗi: fix ở Window Powercell (đổi policy thành Bypass)
+
+ 3. Thêm Rule:
+ Ở .eslintrc.json, phần rule, ta có thể thêm các rule để format cho code của mình
+ Mỗi rule cần config 2 thông số: giá trị ứng với mức độ áp dụng ( 0 - off, 1 - warn, 2 -error ) và các tùy chọn
+ ex:
+      "quotes": [
+            2,
+            "single"
+        ],
+  4. Chuyển đổi ES5 sang ES6 (babel)
+ Setup Babel:
+ Tạo file .babelrc trong root, cài cấu hình cho nó
