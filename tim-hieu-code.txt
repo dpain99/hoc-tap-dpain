@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 1. Arrow Function:
 
@@ -98,4 +99,106 @@
 		.catch(funtion() {})		//reject
 		.finally(function() {})		//ca 2
 	
+=======
+
+1. Arrow Function:
+
+ Thay thế cách viết Regular Function, là tính năng của ES6, làm code gọn nhẹ hơn.
+
+ Regular:
+ const myFunc = Funtion () {}
+
+ Arrow:
+ const myFunc = () => {}
+
+
+
+ Điểm khác Regular Function:
+ - Không cần return
+ - Áp dụng cả trong các phương thức tương tác với array
+ - Arrow Function không có bind (trong từ khóa this)
+ - Agrument: không thể dùng cho Function không xác định số lượng tham số
+ - Không thể dùng làm Constructor
+ - Không có prototype
+ 
+
+ Dùng Regular Function khi: làm việc với object
+ Dùng Arrow Function khi: làm việc với callback function
+ Không thể thay thế nhau, sử dụng hợp lí để đạt hiệu quả.
+
+
+2. Array:
+
+ Mảng, là kiểu dữ liệu. Mảng chứa được nhiều kiểu dữ liệu khác. Mỗi giá trị mảng là 1 element
+
+ - Khai báo :  2 cách
+ * Array literals:
+ var arr = [];		//nên dùng cách này
+ 
+ * Array constructor:
+ var arr = new Array()
+
+ - Thuộc tính:
+ + length: độ dài mảng			ex: arr.length;
+  
+ - Phương thức:
+ 1. some():	kiểm tra mảng với 1 hàm được truyền dưới dạng tham số
+		có ít nhất 1 phần tử khớp => true, ngược lại => false
+	ex: const myAwesomeArray = ["a", "b", "c", "d", "e"]
+	    myAwesomeArray.some(test => test === "d")
+	    //-------> Kết quả : true
+
+ 2. reduce():	có khá nhiều đối số: khởi tạo, currentValue, currentIndex, originArr
+		lặp qua các giá trị mảng, áp dụng hàm logic, rồi lưu vào đối số khởi tạo (cũng là hàm tích lũy)
+		nếu không có đối số khởi tạo, nó lấy phần tử đầu tiên làm tích lũy
+		trả về giá trị là hàm tích lũy (khởi tạo sau khi được áp dụng các hàm)
+
+	ex: const myAwesomeArray = [1, 2, 3, 4, 5]
+	    myAwesomeArray.reduce((total, value) => total * value)
+	    // 1 * 2 * 3 * 4 * 5
+	    //-------> Kết quả = 120
+
+ 3. every():	như some(), nhưng tất cả element cần khớp với hàm kiểm tra, sai 1 cái cũng trả về false
+	ex: const myAwesomeArray = ["a", "b", "c", "d", "e"]
+	    myAwesomeArray.every(test => test === "d")
+	    //-------> Kết quả : false
+ 	    const myAwesomeArray2 = ["a", "a", "a", "a", "a"]
+	    myAwesomeArray2.every(test => test === "a")
+	    //-------> Kết quả : true
+ 4. map():	trả về 1 mảng mới, dùng element mảng cũ, thực hiện hàm, không thay đổi mảng cũ
+		cũng có: currentValue, currentIndex, OriginArr	   
+	ex: const myAwesomeArray = [5, 4, 3, 2, 1]
+	    myAwesomeArray.map(x => x * x) //25, 16, 9, 4, 1
+ 5. filter():	lọc mảng, trả về mảng mới nếu đúng với điều kiện của hàm
+	ex: const myAwesomeArray = [
+	    { id: 1, name: "Hải" },
+  	    { id: 2, name: "Doanh" },
+ 	    { id: 3, name: "Việt" },
+  	    { id: 4, name: "Doanh" },
+	    myAwesomeArray.filter(element => element.name === "Doanh")
+	   //-------> Kết quả : 0:{id: 2, name: "Doanh"},
+	   //                   1:{id: 4, name: "Doanh"}
+  Còn nhiều như: find(), sort(), concat(), splice()...
+
+ 3. Tìm hiểu về Promise (settimeout để fake Promise)
+
+	- Cần hiểu về Sync: Đồng bộ, Async: Bất đồng bộ
+	- Sync: chạy theo luồng, Async: không theo luồng
+	- Hàm setTimeout() là Async, là 1 hàm callback
+	- Promise sinh ra để giải quyết 1 vấn đề khi lập trình bất đồng bộ, như việc dùng callback, gặp callback hell;
+
+	Khai báo:
+	var promise = new Promise(
+		function(resolve, reject) {
+		//logic
+		//resolve: thanh cong
+		//reject: that bai
+	});
+
+	promise
+		.then(function() {})		//resolve
+		.catch(funtion() {})		//reject
+		.finally(function() {})		//ca 2
+	
+>>>>>>> a080509442271493f3acf34b939255c2f6e1864d
 	
